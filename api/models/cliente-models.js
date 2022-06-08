@@ -5,10 +5,12 @@ const clienteSchema = new moongose.Schema({
     name: String,
     date_birth: Date,
     address: String, Number,
-    references: {
+    references: [
+        {
         name: String,
         phone: Number
-    },
+        }
+    ],
     email: String,
     phone: Number
 });
