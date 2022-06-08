@@ -1,0 +1,11 @@
+autores: String,
+  titulo: String,
+  categoria: String,
+  editorial: String,
+  fechaImpresion: Date,
+  paginas: Number,
+  isbn: Number,
+  idioma: String,
+  tipo: String,
+  mayoriaEdad: Boolean,
+  portada: Image
