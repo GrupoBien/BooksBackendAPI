@@ -1,4 +1,5 @@
 import http from 'http';
+import database from './api/config/database.js';
 
 import api from './api/api.js';
 
@@ -9,6 +10,7 @@ server.on('listening', onListening);
 server.on('error', onError);
 
 server.listen(port);
+database();
 
 function onError() {
   switch (error.code) {

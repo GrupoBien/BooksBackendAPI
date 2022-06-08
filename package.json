@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "set NODE_ENV=production&&node server.js",
-    "dev": "set NODE_ENV=development&&nodemon server.js"
+    "dev": "set NODE_ENV=development&&node server.js",
+    "local": "set NODE_ENV=local&&nodemon server.js"
   },
   "repository": {
     "type": "git",
