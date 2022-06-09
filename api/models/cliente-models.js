@@ -1,4 +1,3 @@
-
 import moongose from "mongoose"
 
 const clienteSchema = new moongose.Schema({
