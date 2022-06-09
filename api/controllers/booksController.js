@@ -30,3 +30,19 @@ export const deleteBook = async (req, res) => {
         });
     }
 };
+
+export const bookStatus = async (req, res) => {
+    const { status } = req;
+  
+    try {
+      const newPet = await bookSchema.rentalStatus(status);
+      return req.json({
+        msg: 'Ese libro esta rentado',
+        pet: newPet,
+      });
+    } catch (error) {
+      const result = {
+        msg: 'Ha ocurrido un error al consultar la base de datos',
+      };
+    }
+  };
