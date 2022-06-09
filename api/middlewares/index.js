@@ -1,3 +1,9 @@
 import { isLoggedIn } from "./isLoggedIn"
+import { validateBookeCreation } from "./createBooksValidation.js";
 
-export {isLoggedIn};
+
+
+export {
+    validateBookeCreation,
+    isLoggedIn
+};
