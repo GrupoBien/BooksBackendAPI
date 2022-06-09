@@ -1,4 +1,4 @@
-git add .import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 
 const bookSchema = new mongoose.Schema({
   autores: String,
