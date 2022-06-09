@@ -1,6 +1,5 @@
-import express from 'express';
-import bcrypt from 'bcrypt';
-
+import express from "express";
+import { booksRoute } from "./routes/index.js";
 
 const api = express();
 
@@ -11,5 +10,7 @@ const api = express();
  *
  * Configurar Generic ErrorHandler
  */
+
+api.use("/", booksRoute);
 
 export default api;
