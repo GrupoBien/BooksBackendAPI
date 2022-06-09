@@ -24,7 +24,6 @@ export const deleteBook = async (req, res) => {
     // if (!regex.matches(id)) res.status(400).json({message: "Id inválido"})
 
     try {
-        // si modelo se llama ModeloBooks -->
         const book = await bookSchema.findByIdAndDelete(id);
         res.status(201).json({
             message: "Libro eliminado",
