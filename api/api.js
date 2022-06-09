@@ -1,6 +1,6 @@
 import express from "express";
-import { booksRoute } from "./routes/index.js";
-import { booksCreateRouter } from './routes/index.js'
+import { booksRoute, booksCreateRouter, booksRoute, rentalRoute } from "./routes/index.js";
+
 
 const api = express();
 
@@ -14,5 +14,6 @@ const api = express();
 
 api.use("/", booksRoute);
 api.use(booksCreateRouter)
+api.use("/", rentalRoute);
 
 export default api;

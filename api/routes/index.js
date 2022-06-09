@@ -1,8 +1,3 @@
-import { booksCreateRouter } from "./booksCreateRouter.js";
-import { router as booksRoute } from "./booksRoute.js";
-
-export {
-    booksCreateRouter,
-    booksRoute,
-};
-
+export { booksCreateRouter } from "./booksCreateRouter.js";
+export { router as booksRoute } from "./booksRoute.js";
+export { router as rentalRoute } from "./rentalRoute.js";
