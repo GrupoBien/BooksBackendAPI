@@ -1,4 +1,4 @@
-git add .import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 
 const bookSchema = new mongoose.Schema({
   autores: String,
@@ -11,7 +11,7 @@ const bookSchema = new mongoose.Schema({
   idioma: String,
   tipo: String,
   mayoriaEdad: Boolean,
-  portada: String
+  portada: String,
 });
 
 export default mongoose.model('Book', bookSchema);
