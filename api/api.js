@@ -1,5 +1,6 @@
 import express from "express";
 import { booksRoute } from "./routes/index.js";
+import { clientupdateRoute } from "./routes/index.js";
 
 const api = express();
 
@@ -12,5 +13,6 @@ const api = express();
  */
 
 api.use("/", booksRoute);
+api.use("/", clientupdateRoute);
 
 export default api;
