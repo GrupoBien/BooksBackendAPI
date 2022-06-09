@@ -1,4 +1,4 @@
-// import from ...
+import bookSchema from "../models/ModeloBooks.js";
 
 export const updateBook = async (req, res) => {
     const { id } = req.params;
@@ -6,8 +6,7 @@ export const updateBook = async (req, res) => {
     // if (!regex.matches(id)) res.status(400).json({message: "Id inválido"})
 
     try {
-        // si modelo se llama ModeloBooks -->
-        const book = await ModeloBooks.findByIdAndUpdate(id, req.body);
+        const book = await bookSchema.findByIdAndUpdate(id, req.body);
         res.status(201).json({
             message: "Libro actualizado",
             data: book,
@@ -26,7 +25,7 @@ export const deleteBook = async (req, res) => {
 
     try {
         // si modelo se llama ModeloBooks -->
-        const book = await ModeloBooks.findByIdAndDelete(id);
+        const book = await bookSchema.findByIdAndDelete(id);
         res.status(201).json({
             message: "Libro eliminado",
             data: book,
