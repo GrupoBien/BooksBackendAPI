@@ -15,4 +15,4 @@ const booksCreateValidator = Joi.object({
     
 })
 
-export default booksCreateValidator
+export default booksCreateValidator;
