@@ -5,7 +5,7 @@ export const updateBooks = Joi.object({
     titulo: Joi.string(),
     genero: Joi.string(),
     editorial: Joi.string(),
-    fecha_de_impresion: Joi.string(),
+    fecha_de_impresion: Joi.date(),
     numero_de_paginas: Joi.number(),
     isbn: Joi.string(),
     idiomas: Joi.string(),
