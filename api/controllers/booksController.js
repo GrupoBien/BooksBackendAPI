@@ -2,8 +2,6 @@ import bookSchema from "../models/ModeloBooks.js";
 
 export const updateBook = async (req, res) => {
     const { id } = req.params;
-    // const regex = /^[a-z][0-9]*$/ etc etc
-    // if (!regex.matches(id)) res.status(400).json({message: "Id inválido"})
 
     try {
         const book = await bookSchema.findByIdAndUpdate(id, req.body);
@@ -20,9 +18,6 @@ export const updateBook = async (req, res) => {
 
 export const deleteBook = async (req, res) => {
     const { id } = req.params;
-    // const regex = /^[a-z][0-9]*$/ etc etc
-    // if (!regex.matches(id)) res.status(400).json({message: "Id inválido"})
-
     try {
         const book = await bookSchema.findByIdAndDelete(id);
         res.status(201).json({
