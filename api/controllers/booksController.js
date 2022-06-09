@@ -1,7 +1,7 @@
 // import from ...
 
 export const updateBook = async (req, res) => {
-    const { id } = req.body;
+    const { id } = req.params;
     // const regex = /^[a-z][0-9]*$/ etc etc
     // if (!regex.matches(id)) res.status(400).json({message: "Id inválido"})
 
@@ -17,14 +17,10 @@ export const updateBook = async (req, res) => {
             message: "Error al actualizar libro",
         });
     }
-
-    return res.status(200).json({
-        message: "Libros actualizados correctamente",
-    });
 };
 
 export const deleteBook = async (req, res) => {
-    const { id } = req.body;
+    const { id } = req.params;
     // const regex = /^[a-z][0-9]*$/ etc etc
     // if (!regex.matches(id)) res.status(400).json({message: "Id inválido"})
 
