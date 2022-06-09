@@ -1,15 +1,10 @@
-import mongoose from "mongoose";
-import bcrypt from "bcrypt";
+import mongoose from 'mongoose';
 
-const saltRounds = 10;//how many times how meny times have to encrypt
+const ModelUser = new mongoose.Schema({
+  nombre: String,
+  fecha_de_nacimiento: Date,
+  mail: String,
+  nombre_app: String,
+});
 
-const UserSchema = new mongoose.Schema({
-    username: {type: String, required: true, unique: true},//we set required our inputs, username has to been unique.
-    password: {type: String, required: true},
-  });
-
-UserSchema.pre('save', (params) => {
-    
-})
-  
-  export default mongoose.model('Pet', petSchema);
+export default mongoose.model('User', ModelUser);
