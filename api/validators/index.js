@@ -1,5 +1,3 @@
-import { updateBooks } from "./books";
+import { updateBooks } from './books';
 
-export default {
-    updateBooks,
-};
+export { updateBooks };
