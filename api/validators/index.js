@@ -7,4 +7,3 @@ export {
     loginValidator,
     booksCreateValidator
 };
-
