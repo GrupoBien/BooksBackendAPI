@@ -1,10 +1,9 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const ModelUser = new mongoose.Schema({
-  nombre: String,
-  fecha_de_nacimiento: Date,
-  mail: String,
-  nombre_app: String,
-});
+const UserSchema = new mongoose.Schema({
+    username: {type: String, required: true, unique: true},//we set required our inputs, username has to been unique.
+    password: {type: String, required: true},
+  });
 
-export default mongoose.model('User', ModelUser);
+  
+export default mongoose.model('User', UserSchema);

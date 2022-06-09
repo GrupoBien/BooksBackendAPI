@@ -1,5 +1,7 @@
 import { updateBooks } from "./books";
+import { loginValidator } from "./loginValidator";
 
-export default {
+export {
     updateBooks,
+    loginValidator
 };
