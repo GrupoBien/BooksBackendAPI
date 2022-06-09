@@ -1,5 +1,5 @@
 import express from "express";
-import { booksRoute } from "./routes";
+import { booksRoute } from "./routes/index.js";
 
 const api = express();
 
