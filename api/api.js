@@ -1,13 +1,6 @@
 import express from 'express';
-
 const api = express();
 
-/**
- * Configuro primeros middlewares
- *
- * Configurar rutas
- *
- * Configurar Generic ErrorHandler
- */
+api.use(express.json())
 
 export default api;

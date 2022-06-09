@@ -25,7 +25,7 @@ db.on('reconnected', () => {
   console.log('🙏🏽 Reconectado a la base de datos');
 });
 
-export default function init() {
+export default async function init() {
   let uri = config.server.enviroment === 'local' ? 'mongodb' : 'mongodb+srv';
   uri +=
     database.USER && database.PASSWORD
@@ -35,5 +35,5 @@ export default function init() {
 
   console.log(uri);
 
-  mongoose.connect(uri);
+  await mongoose.connect(uri);
 }
