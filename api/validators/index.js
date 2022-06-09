@@ -1,5 +1,6 @@
 import { updateBooks } from "./books";
+import { rentar } from './rentas.js'
 
-export default {
-    updateBooks,
+export {
+    updateBooks,rentar
 };
