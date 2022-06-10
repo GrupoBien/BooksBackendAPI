@@ -1,4 +1,4 @@
-//import {user} from "../models/login";
+//import {user} from "../models/index.js";
 import bcryp from 'bcrypt';
 import jwt from 'jwt-simple';
 
@@ -47,4 +47,3 @@ const login = async (req, res) => {
   };
   
   export { login};
-  
