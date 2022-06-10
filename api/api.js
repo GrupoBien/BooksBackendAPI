@@ -1,10 +1,10 @@
-import express from 'express';
+import express from "express";
 import {
-  booksRoute,
-  booksCreateRouter,
-  rentalRoute,
-  clientupdateRoute,
-} from './routes/index.js';
+    booksRoute,
+    booksCreateRouter,
+    rentalRoute,
+    clientupdateRoute,
+} from "./routes/index.js";
 
 const api = express();
 //TODO: falta configurar express.json()
@@ -19,9 +19,9 @@ const api = express();
  */
 
 //TODO: que todas vean iguales
-api.use('/', booksRoute);
+api.use("/", booksRoute);
 api.use(booksCreateRouter);
-api.use('/', rentalRoute);
-api.use('/', clientupdateRoute);
+api.use("/", rentalRoute);
+api.use("/", clientupdateRoute);
 
 export default api;
