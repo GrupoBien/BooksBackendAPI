@@ -1,4 +1,4 @@
-import bookSchema from "../models/ModeloBooks.js";
+import bookSchema from "../models/index.js";
 
 export const updateBook = async (req, res) => {
     const { id } = req.params;
