@@ -30,3 +30,27 @@ export const deleteBook = async (req, res) => {
         });
     }
 };
+
+
+export const getBook = (req, res) => {
+    const {title} = req.params;
+
+    try {
+        const books = await bookSchema.find(title);
+
+        if(!books){
+            return res.status(404).json({
+                msg: `Libro no encontrado`
+            });
+        }
+
+        return res.status(200).json({
+            message: "Ok",
+            books,
+        });
+    } catch (error) {
+        return res.status(400).json({
+            message: "Error al obtener el libro solicitado",
+        });
+    }
+};
