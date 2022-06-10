@@ -1,4 +1,4 @@
-import User from "../models/user.js";
+import User from "../models/User.js";
 
 const createUser = async (req, res) => {
     const { nombre, fecha_de_nacimiento, mail, nombre_app } = req.body;
@@ -9,7 +9,7 @@ const createUser = async (req, res) => {
             user: createdUser
         })
     } catch (error) {
-        return res.status(400).json({
+        return res.status(500).json({
             error: error.message
         })
     }
@@ -25,7 +25,7 @@ const deleteUserById = async (req, res) => {
             user: deletedUser
         })
     } catch (error) {
-        return res.status(400).json({ error: error.message });
+        return res.status(500).json({ error: error.message });
     }
 };
 
@@ -44,7 +44,7 @@ const updateUserById = async (req, res) => {
             user: updatedUser
         })
     } catch (error) {
-        return res.status(400).json({
+        return res.status(500).json({
             error: error.message
         })
     }
@@ -60,7 +60,7 @@ const getUserById = async (req, res) => {
             user: userById
         })
     } catch (error) {
-        return res.status(400).json({ error: error.message });
+        return res.status(500).json({ error: error.message });
     }
 };
 
@@ -71,7 +71,7 @@ const getUsers = async (req, res) => {
             users
         })
     } catch (error) {
-        return res.status(400).json({
+        return res.status(500).json({
             error: error.message
         })
     }
@@ -83,4 +83,6 @@ export {
     getUserById,
     getUsers,
     updateUserById,
-}
+};
+
+

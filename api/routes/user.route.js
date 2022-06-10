@@ -7,7 +7,7 @@ import {
     getUserById, 
     getUsers, 
     updateUserById 
-} from '../controllers/user.controller.js';
+} from '../controllers/index.js';
 import userMiddleware from '../middlewares/joi.middleware.js';
 
 userRouter.post('/', userMiddleware('post', 'body'), createUser);
@@ -21,3 +21,4 @@ userRouter.delete('/:id',userMiddleware('delete', 'params'), deleteUserById);
 userRouter.put('/:id', userMiddleware('put', 'body'), updateUserById);
 
 export default userRouter;
+

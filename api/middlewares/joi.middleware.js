@@ -3,9 +3,10 @@ import Validators from '../validators/index.js'
 
 export default (validator, property) =>  {
 
-    if(!Validators.hasOwnProperty(validator))
+    if(!Validators.hasOwnProperty(validator)) {
         throw new Error(`'${validator}' validator does not exist`)
-
+    }
+    
     return async (req, res, next) => {
         try {
             const validatedBody = await Validators[validator].validateAsync(req[property]);
@@ -18,3 +19,4 @@ export default (validator, property) =>  {
         next()
     }
 }
+
