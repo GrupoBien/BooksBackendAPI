@@ -1,4 +1,4 @@
-import Books from '../models/book.js'
+import bookSchema from '../models/index.js'
 
 const createBook = async(req, res) =>{
     const {book} = req.body
@@ -10,7 +10,7 @@ const createBook = async(req, res) =>{
     }
 
     try {
-        const newBook = await Books.create(book)
+        const newBook = await bookSchema.create(book)
         return res.json({
             msg: 'Libro creado correctamente',
             book: newBook

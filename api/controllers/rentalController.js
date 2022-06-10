@@ -1,4 +1,4 @@
-import rentalSchema from "../models/renta.js";
+import rentalSchema from "../models/index.js";
 
 const getAllRentals = (req, res) => {
     try {
