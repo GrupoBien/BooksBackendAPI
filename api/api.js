@@ -1,5 +1,5 @@
 import express from "express";
-import { booksRoute, booksCreateRouter, booksRoute, rentalRoute } from "./routes/index.js";
+import { booksRoute, booksCreateRouter, booksRoute, rentalRoute, userRoute } from "./routes/index.js";
 
 
 const api = express();
@@ -15,5 +15,5 @@ const api = express();
 api.use("/", booksRoute);
 api.use(booksCreateRouter)
 api.use("/", rentalRoute);
-
+api.use("/", userRoute);
 export default api;

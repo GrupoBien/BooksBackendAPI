@@ -37,3 +37,4 @@ export default function init() {
 
   mongoose.connect(uri);
 }
+
