@@ -8,17 +8,17 @@ import {
     getUsers, 
     updateUserById 
 } from '../controllers/index.js';
-import userMiddleware from '../middlewares/joi.middleware.js';
+import userMiddleware from '../middlewares/index.js';
 
-userRouter.post('/', userMiddleware('post', 'body'), createUser);
+userRouter.post('/users', userMiddleware('post', 'body'), createUser);
 
-userRouter.get('/:id', userMiddleware('get', 'params'), getUserById);
+userRouter.get('/users/:id', userMiddleware('get', 'params'), getUserById);
 
-userRouter.get('/', getUsers)
+userRouter.get('/users', getUsers)
 
-userRouter.delete('/:id',userMiddleware('delete', 'params'), deleteUserById);
+userRouter.delete('/users/:id',userMiddleware('delete', 'params'), deleteUserById);
 
-userRouter.put('/:id', userMiddleware('put', 'body'), updateUserById);
+userRouter.put('/users/:id', userMiddleware('put', 'body'), updateUserById);
 
 export default userRouter;
 
