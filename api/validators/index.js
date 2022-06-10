@@ -1,5 +1,4 @@
-import { updateBooks } from "./books";
+import booksCreateValidator from './booksCreateValidator.js';
+import { updateBooks } from './books';
 
-export default {
-    updateBooks,
-};
+export { booksCreateValidator, updateBooks };
