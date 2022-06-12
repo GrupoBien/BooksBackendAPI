@@ -7,6 +7,6 @@ const router = Router();
 router.post('/books', validateBookeCreation, booksController.createBook)
 router.put("/books/:id", booksController.updateBook);
 router.delete("/books/:id", booksController.deleteBook);
-router.get("/books/:title", booksController.getBook);
+router.get("/getBooks", booksController.getBook);
 
 export { router };

@@ -1,5 +1,5 @@
 import express from "express";
-import { booksRoute, booksCreateRouter, rentalRoute, clientupdateRoute } from "./routes/index.js";
+import * as routes from "./routes/index.js";
 
 
 const api = express();
@@ -12,9 +12,8 @@ const api = express();
  * Configurar Generic ErrorHandler
  */
 
-api.use("/", booksRoute);
-api.use(booksCreateRouter);
-api.use("/", rentalRoute);
-api.use("/", clientupdateRoute);
+api.use("/", routes.booksRoute);
+api.use("/", routes.rentalRoute);
+api.use("/", routes.clientupdateRoute);
 
 export default api;
