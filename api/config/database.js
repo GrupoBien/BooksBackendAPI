@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 import config from './index.js';
-
 const db = mongoose.connection;
 const { database } = config;
 

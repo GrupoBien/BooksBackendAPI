@@ -1,13 +1,12 @@
 import mongoose from 'mongoose';
 import { MongoMemoryServer } from 'mongodb-memory-server';
-import { MongoClient } from 'mongodb';
 
 let connection;
 let mongoServer;
 
 const connect = async () => {
   mongoServer = await MongoMemoryServer.create();
-  connection = await MongoClient.connect(mongoServer.getUri());
+  connection = await mongoose.connect(mongoServer.getUri());
 };
 
 const close = async () => {

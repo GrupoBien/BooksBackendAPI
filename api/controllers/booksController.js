@@ -1,13 +1,8 @@
 import { bookSchema } from '../models/index.js';
+import config from '../config/index.js';
 
 export const createBook = async (req, res) => {
   const { book } = req.body;
-
-  if (!book) {
-    return res.status(400).json({
-      msg: 'Falta informacion en el body, favor de completar toda la información',
-    });
-  }
 
   try {
     const newBook = await bookSchema.create(book);
@@ -19,7 +14,9 @@ export const createBook = async (req, res) => {
     const result = {
       msg: 'Ha ocurrido un error al guardar el libro',
       error:
-        process.env.NODE_ENV == 'local' || process.env.NODE_ENV == 'development'
+        config.server.enviroment == 'local' ||
+        config.server.enviroment == 'development' ||
+        config.server.enviroment == 'test'
           ? error
           : null,
     };
@@ -54,6 +51,20 @@ export const deleteBook = async (req, res) => {
   } catch (error) {
     return res.status(400).json({
       message: 'Error al eliminar libro',
+    });
+  }
+};
+
+export const getBooks = async (_, res) => {
+  try {
+    const books = await bookSchema.find();
+    return res.json({
+      msg: 'Libros encontrados',
+      books,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      msg: 'Eror al obtener libros',
     });
   }
 };
