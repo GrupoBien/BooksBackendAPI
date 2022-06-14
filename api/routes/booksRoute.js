@@ -1,7 +1,11 @@
-import { Router } from "express";
-import { booksController } from "../controllers/index.js";
+import { Router } from 'express';
+import { booksController } from '../controllers/index.js';
+import { validateBookeCreation } from '../middlewares/index.js';
 
-export const router = Router();
+const router = Router();
 
-router.put("/books/:id", booksController.updateBook);
-router.delete("/books/:id", booksController.deleteBook);
+router.post('/books', validateBookeCreation, booksController.createBook);
+router.put('/books/:id', booksController.updateBook);
+router.delete('/books/:id', booksController.deleteBook);
+
+export { router };
