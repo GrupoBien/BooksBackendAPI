@@ -5,5 +5,5 @@ export const rentar = Joi.object({
     startRentDate:Joi.date,
     endRentDate:Joi.date.required(),
     books:Joi.array().items(String).required(),
-    cliente:Joi.string.required()
+    cliente:Joi.string().required()
 });
