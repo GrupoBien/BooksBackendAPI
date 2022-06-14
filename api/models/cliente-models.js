@@ -1,7 +1,7 @@
-import moongose from 'mongoose';
+import mongoose from 'mongoose';
 
 //TODO: normalizar nombres de archivos
-const clienteSchema = new moongose.Schema({
+const clienteSchema = new mongoose.Schema({
   name: String,
   date_birth: Date,
   address: String,
