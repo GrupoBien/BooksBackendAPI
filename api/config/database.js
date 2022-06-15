@@ -25,14 +25,18 @@ db.on('reconnected', () => {
 });
 
 export default function init() {
-  let uri = config.server.enviroment === 'local' ? 'mongodb' : 'mongodb+srv';
+  let uri = config.database.HOST === 'localhost' ? 'mongodb' : 'mongodb+srv';
+  //let uri = config.server.enviroment === 'local' ? 'mongodb' : 'mongodb+srv';
   uri +=
     database.USER && database.PASSWORD
       ? `://${database.USER}:${database.PASSWORD}@`
       : '://';
-  uri += `${database.HOST}:${database.PORT}/${database.NAME}?retryWrites=true&w=majority`;
+  //uri += `${database.HOST}:${database.PORT}/${database.NAME}?retryWrites=true&w=majority`;
+  uri += config.database.HOST === 'localhost' 
+      ? `${database.HOST}:${database.PORT}/${database.NAME}?retryWrites=true&w=majority`
+      : `${database.HOST}/${database.NAME}?retryWrites=true&w=majority`
+  
 
-  console.log(uri);
 
   mongoose.connect(uri);
 }
