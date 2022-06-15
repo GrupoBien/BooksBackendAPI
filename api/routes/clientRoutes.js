@@ -4,7 +4,7 @@ import createClient from "../controllers/createClient.js";
 const router = express.Router();
 
 
-router.post("/register", createClient)
+router.post("/client", createClient)
 
 export default router
 

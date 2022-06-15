@@ -3,5 +3,6 @@ import booksCreateValidator from './booksCreateValidator.js';
 import { updateBooks } from './books.js';
 import { rentar } from './rentas.js'
 import { loginValidator } from './loginValidator.js';
+import { updateClient } from './clientValidator.js';
 
-export { booksCreateValidator, updateBooks,rentar, loginValidator };
+export { booksCreateValidator, updateBooks,rentar, loginValidator, updateClient };
