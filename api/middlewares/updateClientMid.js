@@ -9,7 +9,7 @@ Model.findOneAndUpdate(query, { endRentDate: Date }, (Date >= endRentDate)option
 ValidChange = (endRentDate) => { Date >= endRentDate Por alguna razon no me deja poner >=
    return 'Tu perfil de cliente no puede actualizarse mientras tengas un libro en renta';
 }); POR COMIT TUVE QUE QUITAR DATE DE MOONGOSE EN IMPORT LINEA 1*/
-export const MidClientUpdate = async(req, res, next) =>{
+const MidClientUpdate = async(req, res, next) =>{
     const {body} = req;
     try {
         await updateClientValidator.validateAsync(body);
@@ -22,4 +22,5 @@ export const MidClientUpdate = async(req, res, next) =>{
     }
 }
 
+export default MidClientUpdate
  
