@@ -1,4 +1,4 @@
-import { user } from "../models/index.js";
+import { ModelUser } from "../models/index.js";
 import bcryp from 'bcrypt';
 import jwt from 'jwt-simple';
 
@@ -6,7 +6,7 @@ const login = async (req, res) => {
     const { mail, password } = req.body;
     try {
       // here we get the user from the database
-      const userLogged = await user.findById({ usuario: mail })
+      const userLogged = await ModelUser.findById({ usuario: mail })
       
       const match = await bcryp.compare(password, userLogged.password);
 
