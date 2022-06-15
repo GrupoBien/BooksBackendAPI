@@ -1,4 +1,2 @@
 //TODO: arreglar import
-import { validateBookeCreation } from './createBooksValidation.js';
-
-export { validateBookeCreation };
+export { default as validateBookeCreation } from './createBooksValidation.js';

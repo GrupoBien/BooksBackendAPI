@@ -1,4 +1,4 @@
-import clienteSchema from '../models/cliente-models';
+import { clienteSchema } from '../models/index.js';
 
 export const updateClient = async (req, res) => {
   const { id } = req.params;
