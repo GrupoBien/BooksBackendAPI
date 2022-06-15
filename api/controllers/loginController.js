@@ -1,14 +1,14 @@
-//import {user} from "../models/index.js";
+import { user } from "../models/index.js";
 import bcryp from 'bcrypt';
 import jwt from 'jwt-simple';
 
 const login = async (req, res) => {
-    const { username, password } = req.body;
+    const { mail, password } = req.body;
     try {
       // here we get the user from the database
-      //const user = await user.findById({ usuario: email })
+      const userLogged = await user.findById({ usuario: mail })
       
-      const match = await bcryp.compare(password, user.password);
+      const match = await bcryp.compare(password, userLogged.password);
 
       /*we see if the password send by the client and password 
       of the database match*/
@@ -46,4 +46,4 @@ const login = async (req, res) => {
     }
   };
   
-  export { login};
+  export { login };

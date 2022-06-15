@@ -1,6 +1,6 @@
 import { loginValidator } from "../validators/index.js";
 
-export const isLoggedIn = async(req, res, next) => {
+const isLoggedIn = async(req, res, next) => {
     const body = req;
     try {
         await loginValidator.validateAsync({body});
@@ -14,3 +14,5 @@ export const isLoggedIn = async(req, res, next) => {
     }
   };
   
+
+  export default isLoggedIn;
