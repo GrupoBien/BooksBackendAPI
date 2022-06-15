@@ -1,12 +1,10 @@
-import express from "express";
-import createClient from "../controllers/createClient.js";
+import express from 'express';
+import { clientController } from '../controllers/index.js';
 
 const router = express.Router();
 
+router.post('/register', clientController.createClient);
+router.put('/clients/:id', clientController.updateClient);
+router.delete('/clients/:id', clientController.deleteCliente);
 
-router.post("/register", createClient)
-
-export default router
-
-
-
+export default router;
