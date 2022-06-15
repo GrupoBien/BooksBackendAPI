@@ -73,4 +73,6 @@ DATABASE_USER=
 DATABASE_PASSWORD=
 ```
 
+This project has husky
+
 
