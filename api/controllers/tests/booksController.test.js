@@ -14,7 +14,6 @@ afterEach(async () => {
 
 afterAll(async () => {
   await db.close();
-  done();
 });
 
 describe('Books Controller', () => {
