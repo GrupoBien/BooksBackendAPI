@@ -1,2 +1,6 @@
-//TODO: arreglar import
-export { default as validateBookeCreation } from './createBooksValidation.js';
+import { validateBookeCreation } from "./createBooksValidation.js";
+import { MidClientUpdate } from "./updateClientMid";
+
+export {
+    validateBookeCreation, MidClientUpdate,
+};

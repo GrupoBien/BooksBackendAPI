@@ -1,6 +1,5 @@
 import booksCreateValidator from './booksCreateValidator.js';
-//TODO: fix import
-import { updateBooks } from './books.js';
-import { rentar } from './rentas.js'
+import { updateBooks } from './books';
+import { updateClient } from './updateClientValidator';
 
-export { booksCreateValidator, updateBooks,rentar };
+export { booksCreateValidator, updateBooks, updateClient };
