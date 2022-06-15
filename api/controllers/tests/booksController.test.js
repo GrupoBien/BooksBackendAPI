@@ -40,4 +40,24 @@ describe('Books Controller', () => {
     expect(res.statusCode).toEqual(200);
     expect(res.body.books).toBeInstanceOf(Array);
   });
+
+  test('Delete book', async () => {
+    const bookCreated = await agent.post('/books').send({
+      book: {
+        autores: 'autor test',
+        titulo: 'titulo test',
+        categoria: 'categoria test',
+        editorial: 'editorial test',
+        fechaImpresion: new Date(),
+        paginas: 100,
+        isbn: 23,
+        idioma: 'idioma test',
+        tipo: 'tipo test',
+        mayoriaEdad: false,
+      },
+    });
+    const bookDeleted = await agent.delete(`/books/:${bookCreated.body}`).send({});
+    expect(bookDeleted.statusCode).toEqual(201);
+    expect(bookDeleted.body.books).toBeInstanceOf(Array);
+  });
 });
