@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "prepare": "husky install",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "start": "set NODE_ENV=production&&node server.js",
     "dev": "set NODE_ENV=development&&node server.js",
@@ -31,6 +32,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "husky": "^8.0.1",
     "jest": "^28.1.1",
     "mongodb-memory-server": "^8.6.0",
     "supertest": "^6.2.3"
