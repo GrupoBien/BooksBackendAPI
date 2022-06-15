@@ -4,7 +4,7 @@ const db = mongoose.connection;
 const { database } = config;
 
 db.on('connecting', () => {
-  console.log('💅🏽 Intentando conectarse a la base de datos');
+  console.log(' Intentando conectarse a la base de datos');
 });
 
 db.on('error', (error) => {
