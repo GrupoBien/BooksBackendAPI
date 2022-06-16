@@ -32,7 +32,7 @@ api.use((err, req, res, next) => {
     });
   }
   return res.status(500).json({
-    msg: 'Ha ocurrido un error en el server, comunícate con un desarrollador 🔥',
+    msg: 'Ha ocurrido un error en el server, comunícate con un desarrollador',
   });
 });
 
