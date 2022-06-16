@@ -4,7 +4,7 @@ const db = mongoose.connection;
 const { database } = config;
 
 db.on('connecting', () => {
-  console.log('Intentando conectarse a la base de datos');
+  console.log(' Intentando conectarse a la base de datos');
 });
 
 db.on('error', (error) => {
@@ -32,11 +32,10 @@ export default function init() {
       ? `://${database.USER}:${database.PASSWORD}@`
       : '://';
   //uri += `${database.HOST}:${database.PORT}/${database.NAME}?retryWrites=true&w=majority`;
-  uri += config.database.HOST === 'localhost' 
+  uri +=
+    config.database.HOST === 'localhost'
       ? `${database.HOST}:${database.PORT}/${database.NAME}?retryWrites=true&w=majority`
-      : `${database.HOST}/${database.NAME}?retryWrites=true&w=majority`
-  
-
+      : `${database.HOST}/${database.NAME}?retryWrites=true&w=majority`;
 
   mongoose.connect(uri);
 }

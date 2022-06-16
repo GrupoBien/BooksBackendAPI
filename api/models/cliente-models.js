@@ -5,7 +5,6 @@ const clienteSchema = new mongoose.Schema({
   name: String,
   date_birth: Date,
   address: String,
-  Number,
   references: [
     {
       name: String,
