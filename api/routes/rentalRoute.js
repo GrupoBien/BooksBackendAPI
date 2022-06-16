@@ -3,6 +3,6 @@ import { rentalController } from '../controllers/index.js';
 
 const router = Router();
 
-router.get('/rentals', rentalController.getAllRentals);
+router.route("/rentals").get(rentalController.getAllRentals).post(rentalController.createRenta);
 
 export { router };

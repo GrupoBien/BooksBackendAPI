@@ -8,7 +8,7 @@
     "prepare": "husky install",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --forceExit",
     "start": "set NODE_ENV=production&&node server.js",
-    "dev": "set NODE_ENV=development&&node server.js",
+    "dev": "set NODE_ENV=development&&nodemon server.js",
     "local": "set NODE_ENV=local&&nodemon server.js"
   },
   "repository": {
