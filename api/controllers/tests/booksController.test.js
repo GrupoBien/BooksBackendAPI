@@ -56,8 +56,12 @@ describe('Books Controller', () => {
         mayoriaEdad: false,
       },
     });
-    const bookDeleted = await agent.delete(`/books/:${bookCreated.body}`).send({});
-    expect(bookDeleted.statusCode).toEqual(201);
-    expect(bookDeleted.body.books).toBeInstanceOf(Array);
+    
+
+    const { data } = bookCreated.book.body;
+    const {_id}  = data;
+    
+    const deleteBook = await agent.delete(`/books/${_id}`);
+    expect(deleteBook.status).toEqual(201);
   });
 });
