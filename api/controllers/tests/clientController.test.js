@@ -17,13 +17,27 @@ afterAll(async () => {
 });
 
 describe("Client Controller", () => {
-    test("Delete Client --> id error", async () => {
-        const response = agent.del("/clients/62a93bd339362736992ad953");
-        const urlExists = response.url.includes(
-            "/clients/62a93bd339362736992ad953"
-        );
+    test("Delete Client", async () => {
+        // first create a client
+        const newClient = await agent.post("/clients").send({
+            name: "Cliente Test",
+            date_birth: "2020-01-01",
+            address: "Calle falsa 123",
+            phone: "123456789",
+            references: [
+                {
+                    name: "Referencia Test",
+                    phone: "123456789",
+                },
+            ],
+            email: "email@test.com",
+        });
 
-        expect(response.method).toBe("DELETE");
-        expect(urlExists).toBeTruthy();
+        const { data } = newClient.body;
+        const { _id } = data;
+
+        // then we delete it
+        const deleteClient = await agent.del(`/clients/${_id}`);
+        expect(deleteClient.status).toBe(201);
     });
 });
