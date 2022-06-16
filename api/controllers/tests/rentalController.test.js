@@ -18,7 +18,7 @@ afterAll(async () => {
 
 describe("Rental Controllers", () => {
     test("Create Rental", async () => {
-        const client = await agent.post('/client').send({
+        const client = await agent.post('/clients').send({
             
                 nombre: "cliente",
                 date_birth: new Date(),
@@ -31,7 +31,6 @@ describe("Rental Controllers", () => {
                 telefono: 12312312,
             
         })
-        console.log(client.body);
         const books = await agent.post('/books').send({
             book: {
                 autores: 'autor test',
@@ -46,7 +45,7 @@ describe("Rental Controllers", () => {
                 mayoriaEdad: false,
             },
         })
-        const res = await agent.post('/rentals').send({
+        const res = await agent.get('/rentals').send({
             rental: {
                 quantity: 8,
                 startRentDate: new Date(),
