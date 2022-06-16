@@ -17,6 +17,7 @@ afterAll(async () => {
 });
 
 describe('Books Controller', () => {
+  
   test('Create Book', async () => {
     const res = await agent.post('/books').send({
       book: {
@@ -42,6 +43,7 @@ describe('Books Controller', () => {
   });
 
   test('Delete book', async () => {
+    
     const bookCreated = await agent.post('/books').send({
       book: {
         autores: 'autor test',
@@ -58,8 +60,8 @@ describe('Books Controller', () => {
     });
     
 
-    const { data } = bookCreated.book.body;
-    const {_id}  = data;
+    const { book } = bookCreated.body;
+    const {_id}  = book;
     
     const deleteBook = await agent.delete(`/books/${_id}`);
     expect(deleteBook.status).toEqual(201);
