@@ -4,6 +4,9 @@
   "description": "Express api backend for books system",
   "main": "index.js",
   "type": "module",
+  "jest": {
+    "testTimeout": 20000
+  },
   "scripts": {
     "prepare": "husky install",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --forceExit",
