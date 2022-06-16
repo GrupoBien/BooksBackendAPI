@@ -33,10 +33,11 @@ describe("Client Controller", () => {
             email: "email@test.com",
         });
 
+        // if client failed to create, the route throw error. So just desustructure the response
         const { data } = newClient.body;
         const { _id } = data;
 
-        // then we delete it
+        // then we delete client
         const deleteClient = await agent.del(`/clients/${_id}`);
         expect(deleteClient.status).toBe(201);
     });
