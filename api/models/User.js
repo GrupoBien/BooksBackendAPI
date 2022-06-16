@@ -6,6 +6,7 @@ const ModelUser = new mongoose.Schema({
   fecha_de_nacimiento: Date,
   mail: String,
   nombre_app: String,
+  password: String,
 });
 
 export default mongoose.model('User', ModelUser);
