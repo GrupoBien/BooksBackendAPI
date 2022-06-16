@@ -5,5 +5,5 @@ import { isLoggedIn, validUser } from '../middlewares/index.js';
 const router = Router();
 
 router.post('/login', isLoggedIn, loginController.login);
-router.post('/register', validUser, loginController.register);
+router.post('/registerLogin', validUser, loginController.register);
 export { router };

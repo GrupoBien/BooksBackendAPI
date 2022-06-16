@@ -1,9 +1,9 @@
 import { loginValidator } from "../validators/index.js";
 
 const isLoggedIn = async(req, res, next) => {
-    const body = req;
+    const body = req.body;
     try {
-        await loginValidator.validateAsync({body});
+        await loginValidator.validateAsync(body);
         next();
     } catch (error) {
         // return unauthorized
