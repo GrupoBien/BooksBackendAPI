@@ -9,3 +9,4 @@ router.put('/clients/:id', MidClientUpdate, updateClientRental, clientController
 router.delete('/clients/:id', clientController.deleteCliente);
 
 export default router;
+
