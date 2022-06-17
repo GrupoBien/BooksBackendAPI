@@ -1,5 +1,5 @@
 import express from 'express';
-import { booksRoute, rentalRoute, clientRoute } from './routes/index.js';
+import { booksRoute, rentalRoute, clientRoute, loginRoute } from './routes/index.js';
 import config from './config/index.js';
 import morgan from 'morgan';
 
@@ -20,6 +20,7 @@ api.get('/status', (req, res) => {
 api.use(booksRoute);
 api.use(rentalRoute);
 api.use(clientRoute);
+api.use(loginRoute);
 
 api.use((err, req, res, next) => {
   if (

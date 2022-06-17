@@ -1,6 +1,6 @@
 import { validUserSchema } from '../validators/index.js';
 
-const validateBookeCreation = async (req, res, next) => {
+const validUser = async (req, res, next) => {
   const { body } = req;
   try {
     await validUserSchema.validateAsync(body);
@@ -13,4 +13,4 @@ const validateBookeCreation = async (req, res, next) => {
   }
 };
 
-export default validateBookeCreation;
+export default validUser;
