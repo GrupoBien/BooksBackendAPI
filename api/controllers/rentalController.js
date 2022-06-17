@@ -17,8 +17,11 @@ const createRenta=async(req,res)=>{
     }
     console.log(BooksNotExist,BooksExist)
     if(BooksNotExist.length>0)return res.status(404).json({msg:"Algunos libros no existen favor de verificalo"})
-    //let searchRentdates=await rentalSchema.find({})
-    return res.status(201).send("ok")
+    let currentRents=await rentalSchema.find({endRentDate:{$lte:new Date()}});
+    if(currentRents.length>=2)return res.status(400).json({msg:"No puede tener mas de dos rentas activas"})
+    const insertRent={quantity,endRentDate,books:BooksExist,cliente}
+    const renta=await rentalSchema.create(insertRent)
+    return res.status(201).json(renta)
   } catch (error) {
     return res.status(400).json({msg:"Verifique su informacion"}) 
   }
