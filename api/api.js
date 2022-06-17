@@ -1,10 +1,11 @@
 import express from 'express';
 import { booksRoute, rentalRoute, clientRoute } from './routes/index.js';
 import config from './config/index.js';
+import morgan from 'morgan';
 
 const api = express();
 //TODO: configurar morgan logger y que sea diferente por ambiente
-
+api.use(morgan('tiny'));
 api.use(express.json());
 /**
  * Configurar Generic ErrorHandler
