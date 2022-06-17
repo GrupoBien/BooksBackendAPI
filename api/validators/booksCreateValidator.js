@@ -17,7 +17,7 @@ const booksCreateValidator = Joi.object({
       .default(
         'https://www.giulianisgrupo.com/wp-content/uploads/2018/05/nodisponible.png'
       ),
-  }),
+  }).required(),
 });
 
 export default booksCreateValidator;

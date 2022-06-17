@@ -27,9 +27,9 @@ const createRenta=async(req,res)=>{
   }
 }
 
-const getAllRentals = (req, res) => {
+const getAllRentals = async (req, res) => {
   try {
-    const rentals = rentalSchema.find();
+    const rentals = await rentalSchema.find();
     return res.status(200).json({
       message: 'Ok',
       rentals,

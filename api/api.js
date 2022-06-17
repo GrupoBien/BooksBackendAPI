@@ -1,11 +1,11 @@
 import express from 'express';
-import { booksRoute, rentalRoute, clientRoute } from './routes/index.js';
+import { booksRoute, rentalRoute, clientRoute, loginRoute } from './routes/index.js';
 import config from './config/index.js';
-import morgan from 'morgan'
+import morgan from 'morgan';
 
 const api = express();
 //TODO: configurar morgan logger y que sea diferente por ambiente
-
+api.use(morgan('tiny'));
 api.use(express.json());
 api.use(morgan("dev")) 
 /**
@@ -21,6 +21,7 @@ api.get('/status', (req, res) => {
 api.use(booksRoute);
 api.use(rentalRoute);
 api.use(clientRoute);
+api.use(loginRoute);
 
 api.use((err, req, res, next) => {
   if (
