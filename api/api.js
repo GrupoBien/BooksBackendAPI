@@ -7,6 +7,7 @@ const api = express();
 //TODO: configurar morgan logger y que sea diferente por ambiente
 api.use(morgan('tiny'));
 api.use(express.json());
+api.use(morgan("dev")) 
 /**
  * Configurar Generic ErrorHandler
  */
